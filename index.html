@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Álbum Musical</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="album-player">
+            <!-- Album Cover Section -->
+            <div class="album-cover-section">
+                <div class="album-cover">
+                    <img id="albumCover" src="meche.jpg" alt="ANIMA 14 Album Cover">
+                    <div class="vinyl-effect"></div>
+                </div>
+                <div class="album-info">
+                    <h1 id="albumTitle">ANIMA 14</h1>
+                    <h2 id="artistName">Eduardo</h2>
+                    <p id="albumYear">2024</p>
+                </div>
+            </div>
+
+            <!-- Player Controls Section -->
+            <div class="player-section">
+                <div class="current-song-info">
+                    <h3 id="currentSongTitle">Selecciona una canción</h3>
+                    <p id="currentArtist">-</p>
+                </div>
+
+                <div class="progress-container">
+                    <span id="currentTime">0:00</span>
+                    <div class="progress-bar">
+                        <div id="progress" class="progress"></div>
+                    </div>
+                    <span id="totalTime">0:00</span>
+                </div>
+
+                <div class="controls">
+                    <button id="shuffleBtn" class="control-btn">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <button id="prevBtn" class="control-btn">
+                        <i class="fas fa-step-backward"></i>
+                    </button>
+                    <button id="playPauseBtn" class="control-btn play-pause">
+                        <i class="fas fa-play"></i>
+                    </button>
+                    <button id="nextBtn" class="control-btn">
+                        <i class="fas fa-step-forward"></i>
+                    </button>
+                    <button id="repeatBtn" class="control-btn">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
+
+                <div class="volume-container">
+                    <i class="fas fa-volume-up"></i>
+                    <input type="range" id="volumeSlider" min="0" max="100" value="70" class="volume-slider">
+                </div>
+            </div>
+
+            <!-- Playlist Section -->
+            <div class="playlist-section">
+                <h3>Lista de Canciones</h3>
+                <div class="playlist" id="playlist">
+                    <!-- Songs will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden audio element -->
+    <audio id="audioPlayer" preload="metadata"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
